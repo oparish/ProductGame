@@ -281,6 +281,11 @@ init:
 
 label start:
     image blueLine = "blueline.png"
+    python:
+        f = open(renpy.loader.transfn("data/test.txt"),"r")
+        for line in f:
+            renpy.say(None, line)
+        f.close()
     jump main
 
 label main:
